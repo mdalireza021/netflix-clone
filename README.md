@@ -56,18 +56,6 @@ Swift Package Manager is used as a dependency manager. List of dependecies:
 
 
 # ScreenShots
-<div align="center">
-<img src="https://github.com/trnserdar/Netflix/blob/main/ScreenShots/1.png" width="207" height="448"/>
-<img src="https://github.com/trnserdar/Netflix/blob/main/ScreenShots/2.png" width="207" height="448"/>
-<img src="https://github.com/trnserdar/Netflix/blob/main/ScreenShots/3.png" width="207" height="448"/>
-  <br>
-<img src="https://github.com/trnserdar/Netflix/blob/main/ScreenShots/4.png" width="207" height="448"/>
-<img src="https://github.com/trnserdar/Netflix/blob/main/ScreenShots/5.png" width="207" height="448"/>
-<img src="https://github.com/trnserdar/Netflix/blob/main/ScreenShots/6.png" width="207" height="448"/>
-  <br>
-<img src="https://github.com/trnserdar/Netflix/blob/main/ScreenShots/7.png" width="207" height="448"/>
-<img src="https://github.com/trnserdar/Netflix/blob/main/ScreenShots/8.png" width="207" height="448"/>
-<img src="https://github.com/trnserdar/Netflix/blob/main/ScreenShots/9.png" width="207" height="448"/>
-</div>
+
 
 
