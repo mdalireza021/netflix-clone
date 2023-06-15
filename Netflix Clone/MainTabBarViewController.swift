@@ -38,7 +38,7 @@ class MainTabBarViewController: UITabBarController {
         
         vc1.title = "Home";
         
-        vc2.title = "Coming Soon";
+        vc2.title = "Upcoming";
         
         vc3.title = "Top Search";
         
