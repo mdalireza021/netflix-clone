@@ -25,6 +25,7 @@
 		F5100ECE2A308F6D0032EFF4 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5100ECD2A308F6D0032EFF4 /* DownloadsViewController.swift */; };
 		F5100ED52A30B1B00032EFF4 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5100ED42A30B1B00032EFF4 /* CollectionViewTableViewCell.swift */; };
 		F5100ED72A30C3A30032EFF4 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5100ED62A30C3A30032EFF4 /* HeroHeaderUIView.swift */; };
+		F534B9E82A3B19DE00C0C4ED /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F534B9E72A3B19DE00C0C4ED /* SearchResultsViewController.swift */; };
 		F59CB4732A39F11200E688E4 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59CB4722A39F11200E688E4 /* TitleTableViewCell.swift */; };
 		F59CB4752A39F75800E688E4 /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59CB4742A39F75800E688E4 /* TitleViewModel.swift */; };
 		F5DBAB822A3334080008CD00 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DBAB812A3334080008CD00 /* TitleCollectionViewCell.swift */; };
@@ -72,6 +73,7 @@
 		F5100ECD2A308F6D0032EFF4 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		F5100ED42A30B1B00032EFF4 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		F5100ED62A30C3A30032EFF4 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
+		F534B9E72A3B19DE00C0C4ED /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		F59CB4722A39F11200E688E4 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		F59CB4742A39F75800E688E4 /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TitleViewModel.swift; path = "Netflix Clone/Views/TitleViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		F5DBAB812A3334080008CD00 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -163,10 +165,8 @@
 		F5100EC62A308E6B0032EFF4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F5100EC72A308EB30032EFF4 /* HomeViewController.swift */,
-				F5100EC92A308F370032EFF4 /* UpcomingViewController.swift */,
-				F5100ECB2A308F570032EFF4 /* SearchViewController.swift */,
-				F5100ECD2A308F6D0032EFF4 /* DownloadsViewController.swift */,
+				F534B9EA2A3B1A6F00C0C4ED /* General */,
+				F534B9E92A3B1A1E00C0C4ED /* Core */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -213,6 +213,25 @@
 				F505693E2A31D54200821B49 /* APICaller.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		F534B9E92A3B1A1E00C0C4ED /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F5100EC72A308EB30032EFF4 /* HomeViewController.swift */,
+				F5100EC92A308F370032EFF4 /* UpcomingViewController.swift */,
+				F5100ECB2A308F570032EFF4 /* SearchViewController.swift */,
+				F5100ECD2A308F6D0032EFF4 /* DownloadsViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F534B9EA2A3B1A6F00C0C4ED /* General */ = {
+			isa = PBXGroup;
+			children = (
+				F534B9E72A3B19DE00C0C4ED /* SearchResultsViewController.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5100ECC2A308F570032EFF4 /* SearchViewController.swift in Sources */,
+				F534B9E82A3B19DE00C0C4ED /* SearchResultsViewController.swift in Sources */,
 				F5100E9A2A3088440032EFF4 /* MainTabBarViewController.swift in Sources */,
 				F5100ED52A30B1B00032EFF4 /* CollectionViewTableViewCell.swift in Sources */,
 				F505693F2A31D54200821B49 /* APICaller.swift in Sources */,
