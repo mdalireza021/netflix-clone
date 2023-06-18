@@ -8,14 +8,12 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
     private var titles:[Title] = [Title]()
     
     private let discoverTable: UITableView = {
         let table = UITableView()
         table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
         return table;
-        
     }()
     
     private let searchController: UISearchController = {
@@ -59,11 +57,9 @@ class SearchViewController: UIViewController {
                 }
             case .failure(let error):
                 print(error.localizedDescription)
-                
             }
         }
     }
-    
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
@@ -74,10 +70,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else {
             return UITableViewCell()
         }
-        
         let title = titles[indexPath.row]
         let model = TitleViewModel(titleName: title.original_name ?? title.original_title ?? "unknown name", posterURL: title.poster_path ?? "")
-        
         cell.configure(with: model)
         return cell;
     }
@@ -85,13 +79,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140;
     }
-    
 }
 
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
-        
         guard let query = searchBar.text,
               !query.trimmingCharacters(in: .whitespaces).isEmpty,
               query.trimmingCharacters(in: .whitespaces).count >= 3,
