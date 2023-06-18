@@ -8,30 +8,26 @@
 import UIKit
 
 class UpcomingViewController: UIViewController{
-
     private var titles: [Title] = [Title]();
-    
     private let upcomingTable: UITableView = {
         
         let table = UITableView()
         table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
-       
+
         return table
     }()
     
 
     override func viewDidLoad() {
         super.viewDidLoad();
-        
         view.backgroundColor = .systemBackground;
         title = "Upcoming";
         navigationController?.navigationBar.prefersLargeTitles = true;
         navigationController?.navigationItem.largeTitleDisplayMode = .always;
-        
         view .addSubview(upcomingTable);
         upcomingTable.delegate = self;
         upcomingTable.dataSource = self;
-        
+    
         fetchUpcoming();
     }
     override func viewDidLayoutSubviews() {
@@ -42,7 +38,6 @@ class UpcomingViewController: UIViewController{
     
     
     private func fetchUpcoming() {
-        
         APICaller.shared.getUpcomingMovies {
             [weak self] result  in
             switch result {
@@ -56,9 +51,7 @@ class UpcomingViewController: UIViewController{
             }
         }
     }
-    
 }
-
 
 extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,12 +63,32 @@ extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         let title = titles[indexPath.row]
-        
         cell.configure(with: TitleViewModel(titleName: title.original_name ?? title.original_title ?? "unknown title", posterURL: title.poster_path ?? ""))
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140;
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let title = titles[indexPath.row]
+        guard let titleName = title.original_title ?? title.original_name else {
+            return
+        }
+        
+        APICaller.shared.getMovies(with: titleName) { [weak self] result in
+            switch result {
+            case .success(let videoElement):
+                DispatchQueue.main.async {
+                    let vc = TitlePreviewViewController()
+                    vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? ""))
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
