@@ -17,7 +17,10 @@ enum Sections: Int {
 
 class HomeViewController: UIViewController {
     let sectionTitles: [String] = ["Tranding Movies", "Tranding Tv", "Popular", "Upcoming Movies", "Top rated"];
-
+    
+    private var headerView: HeroHeaderUIView?
+    private var randomTrendingMovie: Title?
+    
     private let homeFeedTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier);
@@ -36,7 +39,8 @@ class HomeViewController: UIViewController {
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 500))
         homeFeedTable.tableHeaderView = headerView;
         
-        navigationController?.pushViewController(TitlePreviewViewController(), animated: true)
+        configureHeroHeaderView()
+       
     }
     
     private func configureNavbar() {
@@ -52,6 +56,20 @@ class HomeViewController: UIViewController {
         
         navigationController?.navigationBar.tintColor = .white
     }
+    
+    private func configureHeroHeaderView() {
+        APICaller.shared.getTrandingMovies { [weak self] result in
+                switch result {
+                case .success(let titles):
+                    let selectedTitle = titles.randomElement()
+                    self?.randomTrendingMovie = selectedTitle
+                   self?.headerView?.configure(with: TitleViewModel(titleName: selectedTitle?.original_title ?? "", posterURL: selectedTitle?.poster_path ?? ""))
+                    
+                case .failure(let erorr):
+                    print(erorr.localizedDescription)
+                }
+            }
+        }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews();
