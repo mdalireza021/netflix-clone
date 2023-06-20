@@ -58,4 +58,28 @@ Swift Package Manager is used as a dependency manager. List of dependecies:
 # ScreenShots
 
 
+## Home ##
+<p align="center">
+  <img width="300" height="650" src="https://github.com/mdalireza021/netflix-clone/blob/main/screenshots/home1.png">
+  <img width="300" height="650" src="https://github.com/mdalireza021/netflix-clone/blob/main/screenshots/home2.png">
+  <img width="300" height="650" src="https://github.com/mdalireza021/netflix-clone/blob/main/screenshots/home3.png">
+  <img width="300" height="650" src="https://github.com/mdalireza021/netflix-clone/blob/main/screenshots/home4.png">
+</p>
 
+## Upcoming & Top Search ##
+<p align="center">
+  <img width="300" height="650" src="https://github.com/mdalireza021/netflix-clone/blob/main/screenshots/upcoming.png">
+  <img width="300" height="650" src="https://github.com/mdalireza021/netflix-clone/blob/main/screenshots/search1.png">
+  <img width="300" height="650" src="https://github.com/mdalireza021/netflix-clone/blob/main/screenshots/search2.png">
+</p>
+
+## Downloads ##
+<p align="center">
+  <img width="300" height="650" src="https://github.com/mdalireza021/netflix-clone/blob/main/screenshots/downloads1.png">
+  <img width="300" height="650" src="https://github.com/mdalireza021/netflix-clone/blob/main/screenshots/downloads2.png">
+</p>
+
+
+## Thanks!
+
+thank you for being here💙
